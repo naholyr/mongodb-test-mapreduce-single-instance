@@ -1,0 +1,6 @@
+{
+  "db": "mongodb://localhost/test-naholyr",
+  "collection": "articles",
+  "verbose": false,
+  "nb_docs": 50000
+}

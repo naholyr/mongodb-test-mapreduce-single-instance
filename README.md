@@ -37,8 +37,8 @@ node find-mapreduce
 Sample output:
 
 ```
-MapReduce: 850ms
-Total: 852ms
+MapReduce: 901ms
+Total: 903ms
 ```
 
 ### Simpler map/reduce + find (2 queries)
@@ -50,9 +50,9 @@ node find-mapreduce2
 Sample output:
 
 ```
-MapReduce: 653ms
-Find: 65ms
-Total: 719ms
+MapReduce: 654ms
+Find: 62ms
+Total: 717ms
 ```
 
 ### Find groups + 1 query per group (N+1 queries)
@@ -64,9 +64,40 @@ node find-brute
 Sample output:
 
 ```
-Authors: 302ms
-Queries: 67ms
-Total: 370ms
+Authors: 308ms
+Queries: 69ms
+Total: 378ms
+```
+
+### With `jsMode: true`
+
+cf. http://docs.mongodb.org/manual/reference/method/db.collection.mapReduce/
+
+#### Single map/reduce
+
+```sh
+node find-mapreduce-jsmode
+```
+
+Sample output:
+
+```
+MapReduce: 572ms
+Total: 574ms
+```
+
+#### Simpler map/reduce + find
+
+```sh
+node find-mapreduce2
+```
+
+Sample output:
+
+```
+MapReduce: 445ms
+Find: 55ms
+Total: 501ms
 ```
 
 Cleanup
